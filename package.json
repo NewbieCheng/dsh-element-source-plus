@@ -1,6 +1,6 @@
 {
   "name": "dsh-element-source-plus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "One plugin for the DSH built-in browser: click an element to get its source file and line as a chat reference chip, plus a toolbar menu with zoom, viewport presets, DevTools and a console error log.",
   "license": "MIT",
