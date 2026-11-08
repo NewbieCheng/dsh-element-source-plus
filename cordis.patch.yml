@@ -1,0 +1,8 @@
+# dsh-element-source-plus bundle patch
+#
+# Appended to the bundle stack by `dsh plugin --profile <name> add`.
+# The row only exists so DSH resolves this package's host entry; the rest of
+# the tree comes from the two halves inside lib/.
+- insert:
+    - id: element-source-plus
+      name: 'dsh-element-source-plus'

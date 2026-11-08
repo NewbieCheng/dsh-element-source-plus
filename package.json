@@ -1,0 +1,70 @@
+{
+  "name": "dsh-element-source-plus",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "One plugin for the DSH built-in browser: click an element to get its source file and line as a chat reference chip, plus a toolbar menu with zoom, viewport presets, DevTools and a console error log.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewbieCheng/dsh-element-source-plus.git"
+  },
+  "homepage": "https://github.com/NewbieCheng/dsh-element-source-plus",
+  "bugs": {
+    "url": "https://github.com/NewbieCheng/dsh-element-source-plus/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "element-source",
+    "browser",
+    "devtools",
+    "zoom"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.1.0-rc.6 <0.3.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./vite-plugin": {
+      "types": "./vite-plugin/index.d.ts",
+      "default": "./lib/vite-plugin.js"
+    },
+    "./inject.js": "./lib/inject.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "vite-plugin",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.2.0"
+  }
+}
